@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -79,13 +80,13 @@ int main() {
     cin >> n;
 
     int firstNumber = 1, secondNumber = 1;
+    int result = 0;
 
     // 1,1,2,3,5,8,13,21,34
 
-    for (int i = 1; i <= n / 2; i++) {
-        firstNumber = firstNumber + secondNumber;
-        secondNumber = firstNumber;
+    for (int i = 1; i <= n; i++) {
+        firstNumber = secondNumber;
+        secondNumber = result;
+        result = firstNumber + secondNumber;
     }
-
-    cout << firstNumber;
 }
