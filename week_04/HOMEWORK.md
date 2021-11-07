@@ -1,4 +1,4 @@
-# Tasks - Week 3
+# Homework - Week 4
 
 Task 0 - Серия на Фибоначи
 ------------
