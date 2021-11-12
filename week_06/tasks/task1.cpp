@@ -4,25 +4,14 @@
 using namespace std;
 
 // refactor -> only with one time
-bool isValidTime(int time1, int time2) {
-    int time1Minutes = time1 % 100;
-    int time1Hours = time1 / 100;
+bool isValidTime(int time) {
+    int minutes = time % 100;
+    int hours = time / 100;
 
-    int time2Minutes = time2 % 100;
-    int time2Hours = time2 / 100;
+    bool hasValidMinutes = minutes >= 0 && minutes <= 59;
+    bool hasValidHours = hours >= 0 && hours <= 23;
 
-    bool hasValidTime1 =  time1Minutes >= 0 && 
-                          time1Minutes <= 59 &&
-                          time1Hours >= 0 && 
-                          time1Hours <= 23;
-
-    
-    bool hasValidTime2 =  time2Minutes >= 0 && 
-                          time2Minutes <= 59 &&
-                          time2Hours >= 0 && 
-                          time2Hours <= 23;
-
-    return hasValidTime1 && hasValidTime2;
+    return hasValidHours && hasValidMinutes; 
 }
 
 // 0125 0355  
@@ -36,7 +25,7 @@ void differenceBetweenTimes(int time1, int time2) {
 
 
 
-    if (isValidTime(time1, time2)) {
+    if (isValidTime(time1) && isValidTime(time2)) {
         time1Minutes += time1Hours * 60;
         time2Minutes += time2Hours * 60;
 
