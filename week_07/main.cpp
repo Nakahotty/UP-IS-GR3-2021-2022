@@ -33,7 +33,7 @@ void printArray(char arr[], int n) {
     cout << endl;
 }
 
-// 
+// вместо while -> ползвайте for за правилна инкрементация 
 int arrLength(char chArr[]) {
   size_t i;
   
