@@ -33,14 +33,13 @@ void printArray(char arr[], int n) {
     cout << endl;
 }
 
+// 
 int arrLength(char chArr[]) {
-    int length = 0;
-
-	while (chArr[length] != '\0') { 
-		++length;
-	}
-
-    return length;
+  size_t i;
+  
+  for (i = 0; chArr[i]; i++);
+  
+  return i;
 }
 
 const int SIZE = 100;
@@ -74,8 +73,22 @@ int main() {
 
     // sizeof(arr) / sizeof(<arr_type>) = array length
 
-    char word[] = {'f', 'm', 'i'};
-    int days[] = {1,2,3,4,5};
-    cout << sizeof(word) << endl;
-    cout << sizeof(days) / sizeof(int) << endl;
+    // char word[] = {'f', 'm', 'i'};
+    // int days[] = {1,2,3,4,5};
+    // cout << arrLength(word) << endl;
+    // cout << sizeof(word) << endl;
+    // cout << sizeof(days) / sizeof(int) << endl;
+
+    int size;
+    cout << "Enter char array size: ";
+    // добавяме място за ТЕРМИНИРАЩАТА НУЛА!
+    cin >> size; size++;
+    // за сега запомнете, че това ви трябва за да успеете да въведете изречението
+    cin.get();
+
+
+    char sentence[size];
+    cin.getline(sentence, size);
+    printArray(sentence, size);
+    cout << "Size of sentence: " << arrLength(sentence) << endl;
 }
