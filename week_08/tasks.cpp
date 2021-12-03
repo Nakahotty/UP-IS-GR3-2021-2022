@@ -51,6 +51,105 @@ void interestingNumbers() {
     }
 }
 
+// NxM, N == M -> size
+const int MAX_COLS = 10;
+
+// fillMatrix(int matrix[][], int rows, cols)
+// ... for(; i < rows; i++)
+// ...     for(; j < cols; j++)
+
+void fillMatrix(int matrix[][MAX_COLS], int size) {
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            cout << "arr[" << i << "][" << j << "] = ";
+            cin >> matrix[i][j];
+        }
+    }
+}
+
+void printMatrix(int matrix[][MAX_COLS], int size) {
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            cout << matrix[i][j] << " ";
+        }
+         
+        cout << endl;
+    }
+}
+
+void fillMatrix(int matrix[][MAX_COLS], int rows, int cols) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            cout << "arr[" << i << "][" << j << "] = ";
+            cin >> matrix[i][j];
+        }
+    }
+}
+
+void printMatrix(int matrix[][MAX_COLS], int rows, int cols) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            cout << matrix[i][j] << " ";
+        }
+         
+        cout << endl;
+    }
+}
+
+// 2) Транспониране
+void transposeMatrix(int matrix[][MAX_COLS], int tr[][MAX_COLS], int rows, int cols) {
+    // [i][j] -> [j][i]
+    
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            tr[j][i] = matrix[i][j];
+        }
+    }
+}
+
+// 3) Симетрична
+bool isSymetric(int matrix[][MAX_COLS], int N) {
+    int trMatrix[N][MAX_COLS]; // capacity!!!
+    
+    transposeMatrix(matrix, trMatrix, N, N);
+    cout << " --------- " << endl;
+    printMatrix(trMatrix, N, N);
+
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            if (matrix[i][j] != trMatrix[i][j])
+                return false;
+        }
+    }
+    
+    return true;
+}
+
 int main() {
-    interestingNumbers();
+    int matrix[MAX_COLS][MAX_COLS];
+
+    // int size;
+    // cout << "Enter size: "; cin >> size;
+
+    // fillMatrix(matrix, size);
+    // printMatrix(matrix, size);
+
+    int rows, cols;
+    cout << "Enter rows: "; 
+    cin >> rows;
+    cout << "Enter cols: "; 
+    cin >> cols;
+
+    fillMatrix(matrix, rows, cols);
+    printMatrix(matrix, rows, cols);
+
+    // // 2)
+    // int trMatrix[MAX_COLS][MAX_COLS];
+    // transposeMatrix(matrix, trMatrix, rows, cols);
+    // cout << "Transposed: " << endl;
+    // printMatrix(trMatrix, cols, rows);
+
+    // 3)
+    cout << isSymetric(matrix, rows) << endl;
+
 }
