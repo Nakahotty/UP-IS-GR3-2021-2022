@@ -96,7 +96,7 @@ int *ptr = &a;
 ```
 По този начин правим следното: създали сме променлива от тип int и сме я инициализирали със стойност 50, след това създаваме променлива от тип указател към int на когото присвояваме адреса на а. Вземането на адрес на дадена променлива се прави чрез &(както казахме по-горе). **Най - важното е да се разбере, че указателите пазят адреса към паметта на това, с което искаме да оперираме.**
 
-![alt tag](https://github.com/KristinStefanova/UP_FMI_IS_2017-2018/blob/master/week10/diagrams/MemoryPointer.png)
+![](images/MemoryPointer.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 Пример:
 ```c++
@@ -493,7 +493,9 @@ void foo(int x) // х се създава тук
 	- Псевдонимът казва, когато подадеш дадена променлива, на тази която се присвоява, направо я взима по референция, т.е направо я вземи където се намира по адреса, който е и оперира в оригиналната памет.
 	- Указател - подаваме адреса на променливата и оперираме над него
 
-![alt tag](https://github.com/KristinStefanova/UP_FMI_IS_2017-2018/blob/master/week10/diagrams/PRF.png)
+
+![](images/PRF.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 
 Пример: Искаме да намерим сумата на две числа, като използваме трета променлива в която да се пази резултата. (т.е за учебна цел няма да връщам сумата като резултат, а ще пазя резултата в предварително създадена променлива)
 
